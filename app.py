@@ -31,21 +31,28 @@ GEOAPIFY_API_KEY = ""
 # ⚙️ Average speed used for "Bike" trips (km/h). Change this number to whatever you like.
 BIKE_SPEED_KMH = 60
 
-# ⛽ Fuel estimator -----------------------------------------------------------
-FUEL_DEFAULT_MILEAGE = {"Car": 15.0, "Bike": 40.0}   # km per litre (editable in the app)
-FUEL_REF_DATE = "9 Nov 2026"
-# Reference retail prices in ₹/litre: (city, lat, lon, petrol, diesel). None = not available.
-# Update these numbers whenever prices change – the app picks the nearest city to your start / destination.
+
+# ⛽ Fuel estimator
+FUEL_DEFAULT_MILEAGE = {"Car": 15.0, "Bike": 40.0}  # km per litre
+
+# Latest verified reference data available: 13 November 2026
+FUEL_REF_DATE = "13 Nov 2026"
+
+# Reference retail prices in ₹/litre:
+# (city, latitude, longitude, petrol, diesel)
+# Prices are estimates for reference; local rates may vary.
 FUEL_RATES = [
-    ("Delhi", 28.6139, 77.2090, 102.12, 95.20),
-    ("Mumbai", 19.0760, 72.8777, 111.21, 97.83),
-    ("Bengaluru", 12.9716, 77.5946, 111.68, 99.56),
-    ("Chennai", 13.0827, 80.2707, 107.76, 99.55),
-    ("Hyderabad", 17.3850, 78.4867, 116.15, 104.23),
-    ("Kolkata", 22.5726, 88.3639, 113.51, 99.82),
-    ("Patna", 25.5941, 85.1376, 113.37, None),
-    ("Bhubaneswar", 20.2961, 85.8245, 108.97, None),
+    ("Agra",       27.1767, 78.0081, 101.67, 95.14),
+    ("Delhi",      28.6139, 77.2090, 102.12, 95.20),
+    ("Mumbai",     19.0760, 72.8777, 111.21, 97.83),
+    ("Bengaluru",  12.9716, 77.5946, 111.68, 99.56),
+    ("Chennai",    13.0827, 80.2707, 107.76, 99.55),
+    ("Hyderabad",  17.3850, 78.4867, 116.15, 104.23),
+    ("Kolkata",    22.5726, 88.3639, 113.51, 99.82),
+    ("Patna",      25.5941, 85.1376, 113.37, 99.36),
+    ("Bhubaneswar",20.2961, 85.8245, 108.97, 100.68),
 ]
+
 
 
 def _km_between(lat1, lon1, lat2, lon2):
